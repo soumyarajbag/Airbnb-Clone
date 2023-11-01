@@ -3,8 +3,12 @@ import BrandLogo from "./BrandLogo";
 import { Search  } from "lucide-react";
 import NavMenu from "./NavMenu";
 import MobileNav from "./MobileNav";
-
-const Navbar = () => {
+import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
+import { cookies } from "next/headers";
+const Navbar = async () => {
+  const supabase = createServerComponentClient({cookies})
+  const { data , error} = await supabase.auth.getSession();
+  console.log(data)
   return (
     <div className="flex items-center justify-between px-10 border-b-[1px]">
       <div className="hidden md:block">
@@ -28,7 +32,7 @@ const Navbar = () => {
      
       <div className="md:flex items-center space-x-2 hidden">
         <span>Add your Home</span>
-     <NavMenu />
+     <NavMenu session={data?.session?.user} />
       </div>
     </div>
   );
