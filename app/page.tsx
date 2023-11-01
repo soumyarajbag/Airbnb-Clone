@@ -1,7 +1,14 @@
+import Categories from "@/components/common/Categories";
+import MobileNav from "@/components/common/MobileNav";
+import Navbar from "@/components/common/Navbar";
 
 
 export default function Home() {
   return (
-  <h1>Hello</h1>
+  <div>
+    <Navbar />
+   
+    <Categories />
+  </div>
   )
 }
