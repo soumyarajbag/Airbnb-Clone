@@ -5,6 +5,7 @@ import NavMenu from "./NavMenu";
 import MobileNav from "./MobileNav";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
+import Link from "next/link";
 const Navbar = async () => {
   const supabase = createServerComponentClient({cookies})
   const { data , error} = await supabase.auth.getSession();
@@ -31,7 +32,7 @@ const Navbar = async () => {
       </div>
      
       <div className="md:flex items-center space-x-2 hidden">
-        <span>Add your Home</span>
+        <Link href={"/addhome"}><span>Add your Home</span></Link>
      <NavMenu session={data?.session?.user} />
       </div>
     </div>
