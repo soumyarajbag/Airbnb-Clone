@@ -15,6 +15,8 @@ type Hometype ={
     country: any;
     state:any ;
     price: any;
+    description: any;
+    
     users:{
         name: any;
     }

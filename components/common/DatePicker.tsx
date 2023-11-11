@@ -11,6 +11,9 @@ const DatePicker = () => {
             key:"selection"
         }
     ])
+    const handleDateChange=(date:any)=>{
+        setState([date.selection])
+    }
   return (
     <div>
         <DateRangePicker
