@@ -10,16 +10,15 @@ export default async function Home() {
   const user = await supabase.auth.getUser();
   const { data:home, error } = await supabase.from("homes").select("id , title , image , country , city  , price , users (metadata->name)").eq("user_id", user.data.user?.id);
 
-  
   return (
   <div>
     <Toast />
     <Navbar />
    
     <Categories />
-    <div>
+    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5 px-10">
     {
-      home && home.length > 0 && home.map((item:any) => {
+      home && home.length > 0 && home?.map((item:any) => {
         return(
           <HomeCard home={item} key={item.id} />
         )

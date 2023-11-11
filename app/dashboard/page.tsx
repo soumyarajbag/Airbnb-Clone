@@ -17,6 +17,7 @@ import { Eye, Trash } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import DeleteHomeButton from "@/components/DeleteHomeButton";
 import Toast from "@/components/common/Toast";
+import Link from "next/link";
 
 const Dashboard =async () => {
   const supabase = createServerComponentClient({cookies});
@@ -55,7 +56,10 @@ const Dashboard =async () => {
                     <TableCell>
                     <div className="flex items-center space-x-2">
                    <DeleteHomeButton id={home.id} image={home.image} />
-                      <Button size={"icon"}className="bg-green-400">      <Eye /></Button>
+                   <Link href={`/home/${home.id}`}>
+                   <Button size={"icon"}className="bg-green-400">      <Eye /></Button>
+                   </Link>
+                     
                     </div>
                     </TableCell>
                   </TableRow>

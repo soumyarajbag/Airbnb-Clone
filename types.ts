@@ -13,6 +13,7 @@ type Hometype ={
     image: any;
     city:any ,
     country: any;
+    state:any ;
     price: any;
     users:{
         name: any;
