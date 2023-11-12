@@ -6,8 +6,8 @@ import Link from 'next/link'
 
 const SearchSheetNav = ({session , searchInputCallback}:{session:any , searchInputCallback:(value:string)=>void}) => { 
   return (
-    <div className='flex justify-between items-center px-10 rounded-3xl'>
-      <div>
+    <div className='flex justify-between items-center md:px-10 rounded-3xl'>
+      <div className='hidden md:block'>
         <BrandLogo />
 
       </div>

@@ -12,6 +12,9 @@ export default async function Home({searchParams}:{searchParams?:{[key:string]:s
   if(searchParams?.country){
     query.ilike("country", `%${searchParams?.country}%`)
   }
+  if(searchParams?.category){
+    query.contains("categories", [searchParams?.category])
+  }
   const {data:home , error} = await query; 
   return (
   <div>

@@ -65,8 +65,8 @@ const handleSubmit = ()=>{
           <Search height={17} width={17} />
         </span>
       </div>
-
-      <MobileNav />
+        <div className="w-full"><MobileNav /></div>
+      
       </div>
     </SheetTrigger>
     <SheetContent side={'top'} showCloseIcon={false}>
