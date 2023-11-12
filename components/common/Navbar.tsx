@@ -17,7 +17,7 @@ const Navbar = async () => {
         <BrandLogo />
       </div>
 
-      <SearchSheet />
+      <SearchSheet session={data?.session?.user} />
      
       <div className="md:flex items-center space-x-2 hidden">
         <Link href={"/addhome"}><span>Add your Home</span></Link>

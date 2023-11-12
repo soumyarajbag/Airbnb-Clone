@@ -1,3 +1,4 @@
+"use client"
 import { useState } from 'react';
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
@@ -17,9 +18,9 @@ const DatePicker = () => {
   return (
     <div>
         <DateRangePicker
-        onChange={()=>{}}
+        onChange={handleDateChange}
         moveRangeOnFirstSelection={false}
-        months={2}
+        months={1}
         ranges={state}
         direction='horizontal'
         />
