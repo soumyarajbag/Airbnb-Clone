@@ -4,21 +4,12 @@ import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import {addDays} from "date-fns"
 import {DateRangePicker} from "react-date-range"
-const DatePicker = () => {
-    const [state , setState] = useState([
-        {
-            startDate: new Date(),
-            endDate: addDays(new Date(), 7),
-            key:"selection"
-        }
-    ])
-    const handleDateChange=(date:any)=>{
-        setState([date.selection])
-    }
+const DatePicker = ({state ,dateChangeCallback }:{state :any , dateChangeCallback:(data:any)=>void}) => {
+   
   return (
     <div>
         <DateRangePicker
-        onChange={handleDateChange}
+        onChange={dateChangeCallback}
         moveRangeOnFirstSelection={false}
         months={1}
         ranges={state}
